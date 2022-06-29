@@ -1,0 +1,24 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Orders List</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Order No</th>
+            <th>Ordered with Card Name</th>
+            <th>Shipping Address</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of orders;let i = index">
+            <td>{{ (i+1) }}</td>
+            <td>{{ product.noc}}</td>
+            <td>{{ product.street }}, {{product.city}}, {{product.state}}, {{product.pincode}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

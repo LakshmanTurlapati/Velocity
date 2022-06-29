@@ -1,0 +1,11 @@
+<h1 class="text-center" style="color: #87CEEB;">Products List</h1>
+<div *ngIf="products">
+    <div *ngFor="let product of products" class="d-flex p-5 m-4 justify-content-center">
+        <img [src]="product.imgpath" style="width: 150px; height: 150px; float: left;">
+        <p style="margin-left: 25px;"><span style="font-weight: bold;">ProductName : </span>{{ product.name }}<br><br> <span style="font-weight: bold;">ProductBrand : </span>{{product.brand}}<br><br><span style="font-weight: bold;">Price : </span> {{product.price | currency:"INR"}}</p>
+        <button  (click)="gotocart(product.id)" *ngIf="userloginservice.isUserLoggedIn()" style="background-color: #0fb9b4; width: 150px; height: 40px; margin-left: 20px; margin-top: 30px;"
+            class="btn btn-success">Add to Cart</button>
+        <button (click)="gotocompare(product.id)" *ngIf="userloginservice.isUserLoggedIn()" style="background-color: #0fb9b4; width: 150px; height: 40px; margin-left: 20px; margin-top: 30px;"
+            class="btn btn-success">Add to Compare</button>
+    </div>
+</div>

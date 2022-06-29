@@ -1,0 +1,106 @@
+<header>
+  <div class="fluid-container p-3 bg-dark">
+    <img class="rounded-circle" src="\assets\images\logo.jpeg" alt="Shopping Image" style="width: 64px; height: 64px;">
+    <a href="#" style="font-family: monospace; position: absolute;font-size: 250%; color:#87CEEB; text-decoration: none; margin-left: 10px;">  Online Shopping </a>
+    <nav class="mt-4 navbar nav-fill bg-dark">
+      <!-- Links -->
+      <li class="nav-item">
+        <a routerLink="home" class="clickme info" routerLinkActive="active">Home</a>
+      </li>
+
+      <li class="nav-item">
+        <a *ngIf="!retailerloginservice.isRetailerLoggedIn()" routerLink="listproducts" class="clickme info" routerLinkActive="active">Products</a>
+      </li>
+
+      <li class="nav-item">
+        <a *ngIf="userloginService.isUserLoggedIn()" (click)="check()" class="clickme info" routerLinkActive="active">My Profile</a>
+      </li>
+
+      <li class="nav-item">
+        <a *ngIf="retailerloginservice.isRetailerLoggedIn()" routerLink="addproducts" class="clickme info" routerLinkActive="active">Add Product</a>
+      </li>
+
+      <li class="nav-item">
+        <a *ngIf="retailerloginservice.isRetailerLoggedIn()" routerLink="productlist" class="clickme info" routerLinkActive="active">Product List</a>
+      </li>
+
+      <li class="nav-item">
+        <a *ngIf="adminloginservice.isAdminLoggedIn()" routerLink="retailerslist" class="clickme info" routerLinkActive="active">Retailers List</a>
+      </li>
+
+      <li class="nav-item">
+        <a *ngIf="userloginService.isUserLoggedIn()" routerLink="compare" class="clickme info" routerLinkActive="active">Compare</a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="btn dropdown-toggle" style="background-color: #0fb9b4;border-radius: 10px; font-weight: bold; color: white;"
+          data-bs-toggle="dropdown" id="dropdownMenu1" data-toggle="dropdown" type="button" aria-haspopup="true"
+          aria-expanded="false" *ngIf="userloginService.isUserLoggedIn()" >Category</a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <a class="dropdown-item" href="#" routerLink="sports">Sports</a>
+          <a class="dropdown-item" href="#" routerLink="homeappliances">Home Appliances</a>
+          <a class="dropdown-item" href="#" routerLink="gadgets">Gadgets</a>
+          <a class="dropdown-item" href="#" routerLink="Mobiles">Mobiles</a>
+          <a class="dropdown-item" href="#" routerLink="Electronics">Electronics</a>
+          <a class="dropdown-item" href="#" routerLink="clothes">Clothes</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a *ngIf="userloginService.isUserLoggedIn()" routerLink="cart" class="clickme info" routerLinkActive="active">Cart</a>
+      </li>
+
+      <li class="nav-item">
+        <a *ngIf="userloginService.isUserLoggedIn()" routerLink="userLogout" class="clickme info bg-danger" routerLinkActive="active">LogOut</a>
+      </li>
+
+      <li class="nav-item">
+        <a *ngIf="retailerloginservice.isRetailerLoggedIn()" routerLink="retailerlogout" class="clickme info bg-danger" routerLinkActive="active">LogOut</a>
+      </li>
+
+      <li class="nav-item">
+        <a *ngIf="adminloginservice.isAdminLoggedIn()" routerLink="adminlogout" class="clickme info bg-danger" routerLinkActive="active">LogOut</a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="btn dropdown-toggle" style="background-color: #87CEEB;border-radius: 10px; color: white; font-weight: bold;"
+          data-bs-toggle="dropdown" id="dropdownMenu2" data-toggle="dropdown" type="button" aria-haspopup="true"
+          aria-expanded="false" *ngIf="!userloginService.isUserLoggedIn() && !retailerloginservice.isRetailerLoggedIn() && !adminloginservice.isAdminLoggedIn()">Login/SignUp</a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <a class="dropdown-item" routerLink="userLogin">User Login</a>
+          <a class="dropdown-item" routerLink="userRegister">User Register</a>
+          <a class="dropdown-item" routerLink="retailerLogin">Retailer Login</a>
+          <a class="dropdown-item" routerLink="retailerRegister">Retailer Register</a>
+          <a class="dropdown-item" routerLink="adminLogin">Admin Login</a>
+          <a class="dropdown-item" routerLink="adminRegister">Admin Register</a>
+        </div>
+      </li>
+
+    </nav>
+
+    <form class="form-inline">
+    
+      <input type="text" class="form-control"  id="name" name="name" placeholder ="search for products" [(ngModel)]="name">
+      
+      
+      <button (click)="Search()" class="btn"  style=" background-color:#87CEEB">Search</button>
+      
+    </form>
+  </div>
+</header>
+
+<div class="fluid-container">
+
+  <div class="card">
+
+    <div class="card-body">
+
+      <router-outlet></router-outlet>
+
+    </div>
+  </div>
+</div>
+
+<footer class="page-footer font-small mdb-color lighten-3 pt-4 card-body">
+  <div class="footer-copyright text-center py-3">Capstone Project ⓒ, All Rights Reserved.. </div>
+</footer>

@@ -1,0 +1,40 @@
+.ft {
+    /*position: absolute;*/
+    bottom: 0;
+    width:100%;
+    height: 40px;
+    background-color: #222222;
+    text-align: center;
+}
+ 
+.jumbotron {
+    display: table-cell;
+    vertical-align: middle;
+ }
+ 
+ .info {
+    background-color:##87CEEB;
+    color: #FFFFFF;
+}
+ 
+ 
+ 
+.info:hover {
+    background-color:#014452;
+    color: #FFFFFF;
+}
+ 
+.clickme {
+    background-color:#87CEEB;
+    padding: 8px 20px;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:10px;
+    cursor:pointer;
+}
+ 
+h2{
+    border: 5px solid brown;
+    border-radius: 50px 20px;
+    padding: 10px;
+}
