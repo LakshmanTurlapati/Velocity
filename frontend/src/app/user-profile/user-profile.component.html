@@ -1,0 +1,32 @@
+<h2 style="color:#0fb9b4;text-align: center;">Your Profile</h2>
+
+<hr />
+<div *ngIf="user" style="font-size: 150%;text-align:center;">
+    <div>
+        <label><b>User Id        : </b></label> {{user.id}}
+    </div>
+    <div>
+        <label><b>Name     : </b></label> {{user.fname}} {{user.lname}}
+    </div>
+    <div>
+        <label><b>Email          : </b></label> {{user.email}}
+    </div>
+    <div>
+        <label><b>Phone No       : </b></label> {{user.phoneNo}}
+    </div>
+    <div>
+        <label><b>Date of Birth  : </b></label> {{user.dob | date:'d/m/y'}}
+    </div>
+    <div>
+        <label><b>City           :</b></label> {{user.city}}
+    </div>
+    <br>
+    <button class="btn my-2 my-sm-0 m-3" style="background-color:crimson ;color: white; width: 300px;" type="submit" (click)="orders()" >My Orders</button>
+    <br>
+    <br>
+    <button class="btn my-2 my-sm-0" style="background-color: #0fb9b4 ;width: 200px;" type="submit" (click)="cart()" >Go to Cart</button>
+    <button class="btn my-2 my-sm-0 m-3" style="background-color: #0fb9b4 ;width: 200px;" type="submit" (click)="compare()" >Go to Compare</button>
+</div>
+
+<br>
+<br>

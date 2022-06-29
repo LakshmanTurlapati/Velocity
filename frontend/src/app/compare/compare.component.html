@@ -1,0 +1,45 @@
+<h2 style="color: #0fb9b4; text-align: center;"> Compare Products</h2>
+
+<ng-container *ngIf="products.length !=0">
+    <div class="fluid-container">
+        <div class="row">
+            <div class="col-lg-3 mb-4 p-5 d-flex">
+                <div *ngFor="let product of products">
+                    <div class="card p-5">
+                        <div>
+                            <img [src]="product.imgpath">
+                        </div>
+                        <br>
+                        <div>
+                            <label><b>Product Name: </b></label> {{product.name}}
+                        </div>
+                        <div>
+                            <label><b>Brand: </b></label> {{product.brand}}
+                        </div>
+                        <div>
+                            <label><b>Category: </b></label> {{product.category}}
+                        </div>
+                        <div>
+                            <label><b>Made In: </b></label> {{product.madein}}
+                        </div>
+                        <div>
+                            <label><b>Price </b></label> {{product.price}}
+                        </div>
+                        <br>
+                        <button (click)="removeitem(product.id)" class="btn btn-danger">Remove item</button><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="products.length ==0">
+    <div class="container">
+        <div class="center">
+            <h4>Compare is empty!</h4>
+            <h6>Add items to Compare</h6>
+            <button routerLink="/listproducts" class="btn btn-primary">Shop Now</button>
+        </div>
+    </div>
+</ng-container>
