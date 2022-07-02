@@ -37,7 +37,7 @@ export class LoginRetailerComponent implements OnInit {
         sessionStorage.setItem('rname', this.rname)
         this.invalidLogin = false;
         this.loginSuccess = true;
-         this.successMessage = 'Login Successful.';
+        this.successMessage = 'Login Successful.';
       }
       else{
         this.invalidLogin = true

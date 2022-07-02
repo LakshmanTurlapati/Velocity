@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class PaymentService {
 
-  private baseUrl = 'http://localhost:8989/payment/payments';
+  private baseUrl = 'http://localhost:8080/payment/payments';
 
   constructor(private http:HttpClient) { }
 
@@ -17,6 +17,6 @@ export class PaymentService {
 
   findallPayments() {
 
-    return this.http.get(`http://localhost:8989/payment/payments`);
+    return this.http.get(`http://localhost:8080/payment/payments`);
   }
 }

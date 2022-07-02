@@ -7,13 +7,13 @@ import { Observable } from 'rxjs';
 })
 export class RetailerServiceService {
 
-  private baseUrl = 'http://localhost:8989/retailer/addRetailer';
+  private baseUrl = 'http://localhost:8080/retailer/addRetailer';
 
   constructor(private http:HttpClient) { }
 
   login(RetailerClass:any):Observable<any>
   {
-    return this.http.post(`http://localhost:8989/retailer/retailers`,RetailerClass)
+    return this.http.post(`http://localhost:8080/retailer/retailers`,RetailerClass)
   }
 
   saveRetailer(RetailerClass: Object): Observable<Object> {
@@ -32,10 +32,10 @@ export class RetailerServiceService {
 
   findallretailers() {
 
-    return this.http.get(`http://localhost:8989/retailer/findAllRetailers`)
+    return this.http.get(`http://localhost:8080/retailer/findAllRetailers`)
   }
 
-  private baseUrl1 = 'http://localhost:8989/retailer/delete';
+  private baseUrl1 = 'http://localhost:8080/retailer/delete';
   deleteretailer( id: any): Observable<any> {
 
     return this.http.delete(`${this.baseUrl1}/${id}`,{ responseType: 'text' });

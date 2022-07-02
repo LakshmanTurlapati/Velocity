@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class CartService {
 
-  baseUrl = 'http://localhost:8989/cart/cartproducts';
+  baseUrl = 'http://localhost:8080/cart/cartproducts';
   
   constructor(private http:HttpClient) { }
 

@@ -30,7 +30,7 @@ export class AddProductComponent implements OnInit {
  
   save() {
     this.productService.newProduct(this.product)
-      .subscribe(data => console.log(data), error => console.log(error));
+      .subscribe(data => console.log(data), error => console.log("not stored"));
     this.product= new Product();
     this.gotoList();
   }

@@ -10,13 +10,13 @@ import { AdminClass } from './admin-class';
 })
 export class AdminServiceService {
 
-  private baseUrl = 'http://localhost:8989/admin/addAdmin';
+  private baseUrl = 'http://localhost:8080/admin/addAdmin';
 
   constructor(private http:HttpClient) { }
 
   login(AdminClass:any):Observable<any>
   {
-    return this.http.post(`http://localhost:8989/admin/Admins`,AdminClass)
+    return this.http.post(`http://localhost:8080/admin/Admins`,AdminClass)
   }
 
   saveAdmin(AdminClass: Object): Observable<Object> {

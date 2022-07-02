@@ -8,13 +8,13 @@ import { Observable } from 'rxjs';
 })
 export class ProductListService {
 
-  baseurl = "http://localhost:8989/products";
-  baseurl1 = "http://localhost:8989/products/get";
+  baseurl = "http://localhost:8080/products";
+  baseurl1 = "http://localhost:8080/products/get";
   constructor(private http:HttpClient) { }
 
   getProducts()
   {
-    return this.http.get('http://localhost:8989/products/products');
+    return this.http.get('http://localhost:8080/products/products');
   }
 
   getProductByCategory(category:string): Observable<any> {

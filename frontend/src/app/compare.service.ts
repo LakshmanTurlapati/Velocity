@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class CompareService {
 
-  baseUrl = 'http://localhost:8989/compare/compareproducts';
-  baseurl1 =  'http://localhost:8989/compare/deleteall';
+  baseUrl = 'http://localhost:8080/compare/compareproducts';
+  baseurl1 =  'http://localhost:8080/compare/deleteall';
   
   constructor(private http:HttpClient) { }
 
